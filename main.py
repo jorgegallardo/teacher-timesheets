@@ -7,6 +7,11 @@ from reportlab.lib.pagesizes import letter
 first_name = input('First Name: ')
 last_name = input('Last Name: ')
 file_number = input('File Number: ')
+program_name = input('Program name: ')
+position_title = input('Position Title: ')
+payroll_period = input('Payroll Period Ending: ')
+signature = input('Employee Signature: ')
+
 
 packet = io.BytesIO()
 
@@ -17,6 +22,10 @@ can = canvas.Canvas(packet, pagesize=letter)
 can.drawString(234, 660, first_name)
 can.drawString(24, 660, last_name)
 can.drawString(350, 588, file_number)
+can.drawString(24, 636, program_name)
+can.drawString(24, 565, position_title)
+can.drawString(500, 700, payroll_period)
+can.drawString(24, 43, signature)
 
 can.save()
 
