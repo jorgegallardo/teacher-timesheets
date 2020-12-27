@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { TimesheetsService } from './timesheets.service';
 
 @Component({
   selector: 'app-root',
@@ -7,12 +8,16 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  trainings = [
-    { id: 'training1', name: 'training1' },
-    { id: 'training2', name: 'training2' },
-  ];
+  // trainings = [
+  //   { id: 'training1', name: 'training1' },
+  //   { id: 'training2', name: 'training2' },
+  // ];
+  
+  constructor(private timesheetsService: TimesheetsService) {}
 
   onSubmit(form: NgForm) {
-    console.log(form);
+    const name = form.value.name;
+    const fileNumber = form.value.fileNumber;
+    this.timesheetsService.submitTimesheet({name, fileNumber});
   }
 }
