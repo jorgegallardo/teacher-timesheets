@@ -6,9 +6,7 @@ const pdfdocument = new pdfkit
 pdfdocument.pipe(fs.createWriteStream("teacher_timesheet.pdf"))
 
 pdfdocument.image('original_timesheet.png', {
-    fit: [250, 300],
-    align: 'center',
-    valign: 'center'
+    width: 500
 })
 
 pdfdocument.end()
