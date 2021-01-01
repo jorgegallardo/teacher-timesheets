@@ -10,7 +10,7 @@ Elaborating on the technologies associated with the project, we will be using **
 | Date          | Description   |
 | ------------- | ------------- |
 | 12/16/2020    | Create a form for teachers to input their information. Map the information to the                       electronic timesheet and then generate the completed timesheet in PDF format.|
-| 12/19/2020    | TBA           |
+| 12/19/2020    | Server created using JavaScript.|
 | TBA           | TBA           |
 | TBA           | TBA           |
 | TBA           | TBA           |
