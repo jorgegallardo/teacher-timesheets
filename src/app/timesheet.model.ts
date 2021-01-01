@@ -1,4 +1,5 @@
 export interface Timesheet {
-  name: string;
+  firstName: string;
+  lastName: string;
   fileNumber: number;
 }

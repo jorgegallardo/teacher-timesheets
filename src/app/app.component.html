@@ -4,15 +4,29 @@
     <form (ngSubmit)="onSubmit(form)" #form="ngForm">
       <!-- name -->
       <div class="mb-3 row">
-        <label class="col-sm-3 col-form-label">Full Name</label>
+        <label class="col-sm-3 col-form-label">First Name</label>
         <div class="col-sm-9">
           <input
             type="text"
             id="name"
             class="form-control"
-            placeholder="Enter your first and last name."
+            placeholder="Enter your first name."
             ngModel
-            name="name"
+            name="firstName"
+          />
+        </div>
+      </div>
+
+      <div class="mb-3 row">
+        <label class="col-sm-3 col-form-label">Last Name</label>
+        <div class="col-sm-9">
+          <input
+            type="text"
+            id="name"
+            class="form-control"
+            placeholder="Enter your last name."
+            ngModel
+            name="lastName"
           />
         </div>
       </div>

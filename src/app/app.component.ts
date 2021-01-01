@@ -12,12 +12,13 @@ export class AppComponent {
   //   { id: 'training1', name: 'training1' },
   //   { id: 'training2', name: 'training2' },
   // ];
-  
+
   constructor(private timesheetsService: TimesheetsService) {}
 
-  onSubmit(form: NgForm) {
-    const name = form.value.name;
+  onSubmit(form: NgForm): void {
+    const firstName = form.value.firstName;
+    const lastName = form.value.lastName;
     const fileNumber = form.value.fileNumber;
-    this.timesheetsService.submitTimesheet({name, fileNumber});
+    this.timesheetsService.submitTimesheet({ firstName, lastName, fileNumber });
   }
 }
