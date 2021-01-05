@@ -20,5 +20,6 @@ export class AppComponent {
     const lastName = form.value.lastName;
     const fileNumber = form.value.fileNumber;
     this.timesheetsService.submitTimesheet({ firstName, lastName, fileNumber });
+    form.resetForm();
   }
 }
