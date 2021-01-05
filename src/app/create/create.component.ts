@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { TimesheetsService } from '../timesheets.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create',
@@ -8,7 +9,11 @@ import { TimesheetsService } from '../timesheets.service';
   styleUrls: ['./create.component.css'],
 })
 export class CreateComponent {
-  constructor(private timesheetsService: TimesheetsService) {}
+  @ViewChild('form') createTimesheetForm: NgForm;
+  constructor(
+    private timesheetsService: TimesheetsService,
+    private router: Router
+  ) {}
 
   onSubmit(form: NgForm): void {
     const firstName = form.value.firstName;
@@ -16,5 +21,6 @@ export class CreateComponent {
     const fileNumber = form.value.fileNumber;
     this.timesheetsService.submitTimesheet({ firstName, lastName, fileNumber });
     form.resetForm();
+    this.router.navigate(['/download']);
   }
 }
